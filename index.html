@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Failover Site</title>
+</head>
+<body>
+	<p>This is the failover site. Welcome to the Swamp, while you're here, you can get random quotes from Shrek characters and impress your friends! If you want to leave the swap just say 'exit'</p>
+
+	<form>
+		<label for="name">Enter a character's name:</label>
+		<input type="text" id="name" name="name"><br><br>
+
+		<input type="button" value="Submit" onclick="getQuote()">
+	</form>
+
+	<p id="quote"></p>
+
+	<script>
+		function getQuote() {
+			var name = document.getElementById("name").value;
+			var quote;
+
+			switch(name) {
+				case "Shrek":
+					quote = "Stop singing! Well, it's no wonder you don't have any friends!";
+					break;
+				case "Fiona":
+					quote = "Wait! Sir knight, this'd be our first meeting. Should it not be a wonderful romantic moment?";
+					break;
+				case "Donkey":
+					quote = "In the morning I'm making waffles!";
+					break;
+				case "Puss in Boots":
+					quote = "Pray for mercy, from Puss!";
+					break;
+				case "Prince Charming":
+					quote = "I shall render his head from his shoulders! I will smite him where he stands!";
+					break;
+				case "Prince Farquaad":
+					quote = "Some of you may die, but its a sacrifice I am willing to make!";
+					break;
+				case "exit":
+					quote = "Get out of my swamp!";
+					break;
+				default:
+					quote = "I'm sorry, This character doesn't live in the Kindgom of Duloc! Please refresh";
+			}
+
+			document.getElementById("quote").innerHTML = quote;
+		}
+	</script>
+</body>
+</html>
